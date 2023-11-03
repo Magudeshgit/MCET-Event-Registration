@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegasus-23</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+</head>
+<body>
+    <div class="parent">
+        <div class="header">
+            <img src="{% static 'images/logo.svg'%}" class="logo">
+            <p class="src">Student Research Council</p>
+            <p class="reg">Pegasus-23 Registration</p>
+        </div>
+        <div class="formdiv">
+            <form method="POST" class="register-form" id="register-form">
+                {%csrf_token%}
+                <input type="text" placeholder="Your Name" name="name">
+                <input type="text" placeholder="Roll no" name="dept">
+                <div class="form-group">
+                    <label for="email"><i class="zmdi zmdi-city "></i></label>
+                    <select id="depts" required name="dept">
+                        <option value="Department" disabled selected>Department</option>
+                        <option value="AIDS">Artifical Intelligence & Data Science</option>
+                        <option value="ECE">Electronics & Communications Engineering</option>
+                        <option value="CSE">Computer Science Engineering</option>
+                        <option value="MECH">Mechanical</option>
+                        <option value="CIVIL">Civil Engineering</option>
+                        <option value="AUTO">Automobile Engineering</option>
+                        <option value="MCT">Mechatronics</option>
+                        <option value="CYBER">Cyber Security</option>
+                        <option value="AIML">Aritificial Intelligence & Machine Learning</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label for="re-pass"><i class="zmdi zmdi-time"></i></label>
+                    <select id="depts" required name="year">
+                        <option disabled selected>Year</option>
+                        <option value="II">Second Year</option>
+                        <option value="III">Third Year</option>
+                        <option value="IV">Final Year</option>
+                    </select>
+                </div>
+                <div class="form-group form-button">
+                    <input type="submit" name="signup" id="signup" class="form-submit" value="Submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+    <form method="POST" class="form" id="forms" onsubmit="submitprocess(e)">
+        {%csrf_token%}
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          
+          <div
+            class="progress-step progress-step-active"
+            data-title="Account"
+          ></div>
+          
+          <div class="progress-step" data-title="Social"></div>
+          <div class="progress-step" data-title="Personal"></div>
+        </div>
+        <div class="step-forms step-forms-active">
+          <div class="group-inputs">
+            <label for="username" class="formbold-form-label">Username</label>
+            <input type="text" name="username" id="username" class="formbold-form-input papername"/>
+          </div>
+          <div class="group-inputs">
+            <label for="position">Email</label>
+            <input type="text" name="position" id="position" class="teamsize"/>
+          </div>
+          <div class="group-inputs">
+            <label for="email">Password</label>
+            <input type="text" name="email" id="email" class="member1" />
+            <input type="text" name="email" id="email" class="roll1" />
+          </div>
+          <div class="group-inputs">
+            <label for="email">Confirm password</label>
+            <input type="text" name="email" id="email" class="member2" />
+            <input type="text" name="email" id="email" class="roll2" />
+          </div>
+          <div class="">
+            <input type="submit" value="Submit">
+          </div>
+        </div>
+        <div class="step-forms">
+          <div class="group-inputs">
+            <label for="phone">Facebook</label>
+            <input type="text" name="phone" id="phone" />
+          </div>
+          <div class="group-inputs">
+            <label for="email">Twitter</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div class="group-inputs">
+            <label for="email">Linkedin</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div class="group-inputs">
+            <label for="email">Dribbble</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </div>
+        <div class="step-forms">
+          <div class="group-inputs">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" />
+          </div>
+          <div class="group-inputs">
+            <label for="ID">National ID</label>
+            <input type="number" name="ID" id="ID" />
+          </div>
+  
+          <div class="group-inputs">
+            <label for="ID">Account Number</label>
+            <input type="number" name="ID" id="ID" />
+          </div>
+  
+          <div class="group-inputs">
+            <label for="ID">Swift Code</label>
+            <input type="text" name="ID" id="ID" />
+          </div>
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <!-- <input type="submit" value="Submit" id="submit-form" class="btn"/> -->
+          </div>
+        </div>
+      </form>
+      <script src="{%static 'js/events.js'%}"></script>

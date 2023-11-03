@@ -1,0 +1,141 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div class="formbold-main-wrapper">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+</head>
+<body>
+  {%if err%}
+  <div class="errbox">
+    <p>{{err}}</p>
+  </div>
+  {%endif%}
+        <div class="formbold-form-wrapper m-10 p-10">
+          <div class="header-content">
+                <img src="{% static 'images/logo.svg'%}" class="logo mx-12">
+                <div class="cont">
+                <p><b>Student Research Council</b></p>
+                <p><u>Project Presentation Registration</u></p>
+                </div>
+          </div>
+
+          <form method="POST" class="m-10 form">
+            {%csrf_token%}
+            <div class="formbold-input-group">
+              <label for="name" class="formbold-form-label">Project Name</label>
+              <input
+                type="text"
+                name="pname"
+                id="name"
+                placeholder="Enter your name"
+                class="formbold-form-input p-10"
+                required
+              />
+            </div>
+
+            <div class="formbold-input-group">
+              <label class="formbold-form-label">
+                Which is the Domain of the Project?
+              </label>
+      
+              <select class="formbold-form-select" name="stream" id="occupation" required>
+                <option value="" disabled selected>Department</option>
+                            <option value="IT Stream">IT Stream</option>
+                            <option value="Core Stream">Core Stream</option>
+                            <option value="Circuit Stream">Circuit Stream</option>
+              </select>
+            </div>
+            <div class="formbold-input-group teamparent">
+                <label for="email" class="formbold-form-label">Member 1 </label>
+                <input
+                  type="text"
+                  name="mem1"
+                  id="email"
+                  placeholder="Team Member Name"
+                  class="formbold-form-input"
+                  required
+                  
+                />
+
+                <label for="email" class="formbold-form-label">Roll No</label>
+                <input
+                  type="text"
+                  name="roll1"
+                  id="email"
+                  placeholder="Roll No (eg: 23BAD***)"
+                  class="formbold-form-input rolln1"
+                  required
+                  
+                />
+
+                <label for="email" class="formbold-form-label"  style="margin-top: 20px;"> Member 2 </label>
+                <input
+                    type="text"
+                    name="mem2"
+                    id="email"
+                    placeholder="Team Member Name"
+                    class="formbold-form-input"
+                    required
+                />
+                <label for="email" class="formbold-form-label">Roll No</label>
+                <input
+                  type="text"
+                  name="roll2"
+                  id="email"
+                  placeholder="Roll No (eg: 23BAD***)"
+                  class="formbold-form-input rolln2"
+                  required
+                  
+                />
+      
+            <div class="formbold-input-group">
+              <label class="formbold-form-label">
+                Tell us about your Project
+              </label>
+              <Textarea
+                  name="abstract"
+                  class="formbold-form-input"
+                  required
+                  rows=7 minlength="20" maxlength=250
+                /> </Textarea>
+      
+            <button class="formbold-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+       
+<script>
+  form = document.querySelector('.form')
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();  
+  var rollno1 = document.querySelector(".rolln1").value
+  var rollno2 = document.querySelector(".rolln2").value
+
+  var form = document.querySelector('.form')
+
+  var validator = /^\d{2}[a-zA-Z]{3}\d{3}$/
+
+
+  if (!validator.test(rollno1))
+  {
+    console.log(rollno1)
+    alert("Invalid College Roll No 1")
+  }
+  else if (!validator.test(rollno2))
+  {
+    console.log(rollno2)
+    alert("Invalid College Roll No 1")
+  }
+  
+  else
+  {
+    form.submit()
+  }
+})
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Event</title>
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+    <!-- <link rel="stylesheet" href="events.css">
+    <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="{%static 'css/events.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header-content">
+        <img src="{% static 'images/logo.svg'%}" class="logo mx-10">
+        <div class="cont">
+        <p><b>Student Research Council</b></p>
+        <p><u>Technofete'23</u></p>
+        {% if events|length < 3 %}
+          <p>Thank You </p>
+        {%endif%}
+        </div>
+    </div>
+    {% for i in events%}
+    {%if i == "Project Presentation" %}
+    <p class="h-1">Project Presentation</p>
+    <div class="formbold-form-wrapper m-10 p-10 mx-1">
+    <form method="POST" class="m-10">
+        {%csrf_token%}
+        <input type="text" value="Project" name="type"  class="dnone">
+        <div class="formbold-input-group">
+          <label for="name" class="formbold-form-label mt-10">Project Name</label>
+          <input
+            type="text"
+            name="pname"
+            id="name"
+            placeholder="Enter your name"
+            class="formbold-form-input p-10"
+            required
+          />
+        </div>
+
+        <div class="formbold-input-group mt-10">
+          <label class="formbold-form-label">
+            Which is the Domain of the Project?
+          </label>
+  
+          <select class="formbold-form-select p-10" name="dept" id="occupation" required>
+            <option value="" disabled selected>Department</option>
+                        <option value="IT Stream">IT Stream</option>
+                        <option value="Core Stream">Core Stream</option>
+                        <option value="Circuit Stream">Circuit Stream</option>
+          </select>
+        </div>
+
+        <div class="formbold-input-group teamparent mt-10">
+          <div class="contint">
+            <div>
+            <label for="email" class="formbold-form-label">Member 1 </label>
+            <input
+              type="text"
+              name="mem1"
+              id="email"
+              placeholder="Team Member Name"
+              class="formbold-form-input p-10"
+              
+            />
+            </div>
+            <div>
+            <label for="email" class="formbold-form-label mt-10">Roll No</label>
+            <input
+              type="text"
+              name="roll1"
+              id="email"
+              placeholder="Member 1 Roll No"
+              class="formbold-form-input p-10"
+              
+            />
+            </div>
+          </div>
+          <div>
+            <div class="contint">
+              <div>
+            <label for="email" class="formbold-form-label mt-10"> Member 2 </label>
+            <input
+                type="text"
+                name="mem2"
+                id="email"
+                placeholder="Team Member Name"
+                class="formbold-form-input p-10"
+                
+            />
+            </div>
+            <div>
+            <label for="email" class="formbold-form-label mt-10">Roll No</label>
+            <input
+              type="text"
+              name="roll2"
+              id="email"
+              placeholder="Member 2 Roll No"
+              class="formbold-form-input p-10"
+              
+            />
+            </div>
+            </div>
+            </div>
+            
+        <div class="formbold-input-group">
+          <label class="formbold-form-label mt-10">
+            Tell us about your Project
+          </label>
+          <Textarea
+              name="abstract"
+              class="formbold-form-input p-10"
+              required
+            />
+          </Textarea>
+        </div>
+        <button class="formbold-btn">Submit</button>
+      </form>
+    </div>
+      {%endif%}
+    {%if i == "Paper Presentation" %}
+    <p class="h-1">Paper</p>
+    <div class="formbold-form-wrapper m-10 p-10 mx-1">
+    <form method="POST">
+        {%csrf_token%}
+        <input type="text" value="Paper" name="type"  class="dnone">
+        <div class="formbold-input-group">
+          <label for="name" class="formbold-form-label mt-10">Paper Topic</label>
+          <input
+            type="text"
+            name="topic"
+            id="name"
+            placeholder="Enter your name"
+            class="formbold-form-input p-10"
+            required
+          />
+        </div>
+
+        <div class="formbold-input-group teamparent">
+          <div class="contint">
+            <div>
+            <label for="email" class="formbold-form-label mt-10">Member 1 </label>
+            <input
+              type="text"
+              name="mem1"
+              id="email"
+              placeholder="Member 1 Name"
+              class="formbold-form-input p-10"
+              
+            />
+            </div>
+            <div>
+            <label for="email" class="formbold-form-label mt-10">Roll No</label>
+            <input
+              type="text"
+              name="roll1"
+              id="email"
+              placeholder="Member 1 Roll"
+              class="formbold-form-input p-10"
+              
+            />
+            </div>
+            </div>
+            <div class="contint">
+              <div>
+            <label for="email" class="formbold-form-label mt-10"> Member 2 </label>
+            <input
+                type="text"
+                name="mem2"
+                id="email"
+                placeholder="Member 2 Name"
+                class="formbold-form-input p-10"
+                
+            />
+            </div>
+            <div>
+            <label for="email" class="formbold-form-label mt-10">Roll No</label>
+            <input
+              type="text"
+              name="roll2"
+              id="email"
+              placeholder="Member 2 Roll No"
+              class="formbold-form-input p-10"
+              
+            />
+            </div>
+            </div>
+            </div>
+            
+  
+        <div class="formbold-input-group">
+          <label class="formbold-form-label mt-10">
+            Abstract(max:250 words)
+          </label>
+          <Textarea
+              name="abstract"
+              class="formbold-form-input p-10"
+              required
+            />
+          </Textarea>
+        </div>
+        <button class="formbold-btn">Submit</button>
+      </form>
+    </div>
+    {%endif%}
+    {%if i == "Ideathon" %}
+    <p class="h-1">Ideathon</p>
+    <div class="formbold-form-wrapper m-10 p-10 mx-1 mt-10">
+    <form method="POST">
+        {%csrf_token%}
+        <input type="text" value="Ideathon" name="type"  class="dnone">
+        <div class="formbold-input-group">
+          <label for="name" class="formbold-form-label mt-10">Team Name</label>
+          <input
+            type="text"
+            name="teamname"
+            id="name"
+            placeholder="Enter your name"
+            class="formbold-form-input p-10"
+            required
+          />
+        </div>
+
+        <div class="formbold-input-group teamparent">
+            <label for="email" class="formbold-form-label mt-10">Member 1 </label>
+            <input
+              type="text"
+              name="mem1"
+              id="email"
+              placeholder="Member 1 Name"
+              class="formbold-form-input p-10"
+              
+            />
+
+            <label for="email" class="formbold-form-label labelr1 mt-10">Roll No</label>
+            <input
+              type="text"
+              name="roll1"
+              id="email"
+              placeholder="Member 1 Roll No"
+              class="formbold-form-input p-10"
+              
+            />
+
+            <label for="email" class="formbold-form-label mt-10"> Member 2 </label>
+            <input
+                type="text"
+                name="mem2"
+                id="email"
+                placeholder="Member 2 Name"
+                class="formbold-form-input p-10"
+                
+            />
+            <label for="email" class="formbold-form-label mt-10">Roll No</label>
+            <input
+              type="text"
+              name="roll2"
+              id="email"
+              placeholder="Member 2 Roll No"
+              class="formbold-form-input p-10"
+              
+            />
+            
+            <label for="email" class="formbold-form-label mt-10">Member 3</label>
+            <input
+                type="text"
+                name="mem3"
+                id="email"
+                placeholder="Member 3 Name"
+                class="formbold-form-input p-10"  
+            />
+            <label for="email" class="formbold-form-label mt-10">Roll No</label>
+            <input
+              type="text"
+              name="roll3"
+              id="email"
+              placeholder="Member 3 Roll No"
+              class="formbold-form-input p-10"
+              
+            />
+
+        </div>
+  
+        <div class="formbold-input-group">
+  
+        <button class="formbold-btn">Submit</button>
+      </form>
+    </div>
+    {%endif%}
+    {%if i == "Product Pitching" %}
+    <p class="h-1">Product Pitching</p>
+    <div class="formbold-form-wrapper m-10 p-10 mx-1 mt-10">
+    <form method="POST">
+      {%csrf_token%}
+      <input type="text" value="Product" name="type"  class="dnone">
+      <div class="formbold-input-group">
+        <label for="name" class="formbold-form-label mt-10">Product Name</label>
+        <input
+          type="text"
+          name="product"
+          id="name"
+          placeholder="Enter your name"
+          class="formbold-form-input p-10"
+          required
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label class="formbold-form-label m-10">
+          Which is your Product About?
+        </label>
+      </div>
+
+      <div class="formbold-input-group teamparent">
+          <label for="email" class="formbold-form-label m-10">Member 1 </label>
+          <input
+            type="text"
+            name="mem1"
+            id="email"
+            placeholder="Member 1 Name"
+            class="formbold-form-input p-10"
+            
+          />
+
+          <label for="email" class="formbold-form-label mt-10">Roll No</label>
+          <input
+            type="text"
+            name="roll1"
+            id="email"
+            placeholder="Member 1 Roll No"
+            class="formbold-form-input"
+            
+          />
+
+          <label for="email" class="formbold-form-label mt-10"> Member 2 </label>
+          <input
+              type="text"
+              name="mem2"
+              id="email"
+              placeholder="Member 2 Name"
+              class="formbold-form-input p-10"
+              
+          />
+          <label for="email" class="formbold-form-label mt-10">Roll No</label>
+          <input
+            type="text"
+            name="roll2"
+            id="email"
+            placeholder="Member 2 Roll No"
+            class="formbold-form-input p-10"
+            
+          />
+          
+          <label for="email" class="formbold-form-label mt-10">Member 3</label>
+          <input
+              type="text"
+              name="mem3"
+              id="email"
+              placeholder="Member 3 Name"
+              class="formbold-form-input p-10"
+              
+          />
+          <label for="email" class="formbold-form-label m-10">Roll No</label>
+          <input
+            type="text"
+            name="roll3"
+            id="email"
+            placeholder="Member 3 Roll No"
+            class="formbold-form-input p-10"
+            
+          />
+          <div class="formbold-input-group">
+            <label class="formbold-form-label mt-10">
+              Tell us about your Project
+            </label>
+            <Textarea
+                name="desc"
+                class="formbold-form-input p-10"
+                required
+              />
+            </Textarea>
+          </div>
+          <button class="formbold-btn">Submit</button>
+    </div>
+    </form>
+    </div>
+  {%endif%}
+  {%endfor%}
+<script>
+  let data = document.querySelector('.eventlist').innerText
+  console.log(JSON.parse(data))
+
+</script>
+</body>
+</html>

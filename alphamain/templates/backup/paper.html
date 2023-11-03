@@ -1,0 +1,254 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div class="formbold-main-wrapper">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+</head>
+<body
+        <div class="formbold-form-wrapper">
+          <div class="header-content">
+                <img src="{% static 'images/logo.svg'%}" class="logo">
+                <div class="cont">
+                <p><b>Student Research Council</b></p>
+                <p><u>Paper Presentation Registration</u></p>
+                </div>
+          </div>
+          <form method="POST">
+            {%csrf_token%}
+            <div class="formbold-input-group">
+              <label for="name" class="formbold-form-label">Project Name</label>
+              <input
+                type="text"
+                name="projectname"
+                id="name"
+                placeholder="Enter your name"
+                class="formbold-form-input"
+                required
+              />
+            </div>
+
+            <div class="formbold-input-group">
+              <label class="formbold-form-label">
+                Which is the Domain of the Project?
+              </label>
+      
+              <select class="formbold-form-select" name="dept" id="occupation" required>
+                <option value="" disabled selected>Department</option>
+                            <option value="IT">IT Stream</option>
+                            <option value="Core">Core Stream</option>
+                            <option value="Circuit">Circuit Stream</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group">
+              <label for="name" class="formbold-form-label">Team Size</label>
+              <select class="formbold-form-select teams" name="teamsize" id="occupation" onchange="teamSize()" required>
+                <option value="" disabled selected>Members</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group teamparent">
+                <label for="email" class="formbold-form-label label1">Member 1 </label>
+                <input
+                  type="text"
+                  name="users"
+                  id="email"
+                  placeholder="Team Member Name"
+                  class="formbold-form-input user1"
+                  
+                />
+
+                <label for="email" class="formbold-form-label labelr1">Roll No</label>
+                <input
+                  type="text"
+                  name="rollno"
+                  id="email"
+                  placeholder="Team Member Name"
+                  class="formbold-form-input roll1"
+                  
+                />
+
+                <label for="email" class="formbold-form-label label2"> Member 2 </label>
+                <input
+                    type="text"
+                    name="users"
+                    id="email"
+                    placeholder="Team Member Name"
+                    class="formbold-form-input user2"
+                    
+                />
+                <label for="email" class="formbold-form-label labelr2">Roll No</label>
+                <input
+                  type="text"
+                  name="rollno"
+                  id="email"
+                  placeholder="Team Member Name"
+                  class="formbold-form-input roll2"
+                  
+                />
+                
+                <label for="email" class="formbold-form-label label3">Member 3</label>
+                <input
+                    type="text"
+                    name="users"
+                    id="email"
+                    placeholder="Team Member Name"
+                    class="formbold-form-input user3"
+                    
+                />
+                <label for="email" class="formbold-form-label labelr3">Roll No</label>
+                <input
+                  type="text"
+                  name="rollno"
+                  id="email"
+                  placeholder="Team Member Name"
+                  class="formbold-form-input roll3"
+                  
+                />
+
+                <label for="email" class="formbold-form-label label4"> Member 4 </label>
+                <input
+                    type="text"
+                    name="users"
+                    id="email"
+                    placeholder="Team Member Name"
+                    class="formbold-form-input user4"
+                    
+                />
+                <label for="email" class="formbold-form-label labelr4">Roll No</label>
+                <input
+                  type="text"
+                  name="rollno"
+                  id="email"
+                  placeholder="Team Member Name"
+                  class="formbold-form-input roll4"
+                  
+                />
+              </div>
+      
+            <div class="formbold-input-group">
+              <label class="formbold-form-label">
+                Tell us about your Project
+              </label>
+              <Textarea
+                  name="about"
+                  class="formbold-form-input"
+                  required
+                />
+              </Textarea>
+      
+            <button class="formbold-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+       
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ansInputs = document.querySelectorAll("input[name='events']");
+    var maxAllowed = 4;
+
+    ansInputs.forEach(function(input) {
+        input.addEventListener('change', function() {
+            var cnt = document.querySelectorAll("input[name='events']:checked").length;
+
+            if (cnt > maxAllowed) {
+                this.checked = false;
+                alert('You can select maximum ' + maxAllowed + ' Events!!');
+            }
+        });
+    });
+});
+
+function teamSize() {
+    size=document.querySelector('.teams').value
+    console.log(size)
+    label1=document.querySelector('.label1')
+    user1=document.querySelector('.user1')
+    labelr1=document.querySelector('.labelr1')
+    roll1=document.querySelector('.roll1')
+
+    label2=document.querySelector('.label2')
+    user2=document.querySelector('.user2')
+    labelr2=document.querySelector('.labelr2')
+    roll2=document.querySelector('.roll2')
+
+    label3=document.querySelector('.label3')
+    user3=document.querySelector('.user3')
+    labelr3=document.querySelector('.labelr3')
+    roll3=document.querySelector('.roll3')
+
+    label4=document.querySelector('.label4')
+    user4=document.querySelector('.user4')
+    labelr4=document.querySelector('.labelr4')
+    roll4=document.querySelector('.roll4')
+
+    if (size=="1")
+    {
+        label1.style.display="block"
+        user1.style.display="block"
+        labelr1.style.display="block"
+        roll1.style.display="block"
+    }
+    else if (size=="2")
+    {
+        label1.style.display="block"
+        user1.style.display="block"
+        labelr1.style.display="block"
+        roll1.style.display="block"
+
+        label2.style.display="block"
+        user2.style.display="block"
+        labelr2.style.display="block"
+        roll2.style.display="block"
+    }
+
+    else if (size=="3")
+    {
+        label1.style.display="block"
+        user1.style.display="block"
+        roll1.style.display="block"
+        labelr1.style.display="block"
+
+        label2.style.display="block"
+        user2.style.display="block"
+        roll2.style.display="block"
+        labelr2.style.display="block"
+
+        label3.style.display="block"
+        user3.style.display="block"
+        roll3.style.display="block"
+        labelr3.style.display="block"
+    }
+
+    else if(size=="4")
+    {
+        label1.style.display="block"
+        user1.style.display="block"
+        roll1.style.display="block"
+        labelr1.style.display="block"
+
+        label2.style.display="block"
+        user2.style.display="block"
+        roll2.style.display="block"
+        labelr2.style.display="block"
+
+        label3.style.display="block"
+        user3.style.display="block"
+        roll3.style.display="block"
+        labelr3.style.display="block"
+
+        label4.style.display="block"
+        user4.style.display="block"
+        roll4.style.display="block"
+        labelr4.style.display="block"
+    }
+
+    }
+
+</script>
+</body>
+</html>

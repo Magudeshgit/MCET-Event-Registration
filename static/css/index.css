@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 10px;
+}
+.logo
+{
+    max-width: 20%;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+.formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+
+.formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 570px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    min-height: 100vh;
+    height: 100vh;
+}
+
+.formbold-form-img {
+    margin-bottom: 45px;
+}
+
+.formbold-input-group {
+    margin-bottom: 18px;
+}
+
+.formbold-form-select {
+    width: 100%;
+    padding: 12px 22px;
+    border-radius: 5px;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-size: 16px;
+    color: #536387;
+    outline: none;
+    resize: none;
+}
+
+.formbold-input-radio-wrapper {
+    margin-bottom: 25px;
+}
+.formbold-radio-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.formbold-radio-label {
+    font-size: 14px;
+    line-height: 24px;
+    color: #07074d;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.formbold-input-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.formbold-radio-checkmark {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #ffffff;
+    border: 1px solid #dde3ec;
+    border-radius: 50%;
+}
+.formbold-radio-label
+    .formbold-input-radio:checked
+    ~ .formbold-radio-checkmark {
+    background-color: #6a64f1;
+}
+.formbold-radio-checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.formbold-radio-label
+    .formbold-input-radio:checked
+    ~ .formbold-radio-checkmark:after {
+    display: block;
+}
+
+.formbold-radio-label .formbold-radio-checkmark:after {
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    transform: translate(-50%, -50%);
+}
+.formbold-form-label 
+{
+    margin-top: 25px;
+}
+.formbold-form-input {
+    width: 100%;
+    padding: 13px 22px;
+    border-radius: 5px;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    color: #07074d;
+    outline: none;
+    resize: none;
+}
+.formbold-form-input::placeholder {
+    color: #536387;
+}
+.formbold-form-input:focus {
+    border-color: #6a64f1;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+.formbold-form-label {
+    color: #07074d;
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+.header-content
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.cont
+{
+    margin-left: 2em;
+}
+.cont>p
+{
+    color: black;
+    font-size: 2.8em;
+}
+.formbold-btn {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6a64f1;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+}
+.formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+.eventheader
+{
+    font-size: 2.8em;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.eventwrap
+{
+    margin-top: 2em;
+}
+.fs-1
+{
+    font-size: 15.5px;
+}
+.fw-1
+{
+    font-weight: 500;
+}
+.mx-1
+{
+  max-width: 100%;
+}
+.formbold-input-radio-wrapper
+{
+    margin-right: 1em;
+}
+.evspan
+{
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+.label1, .label2 , .label3, .user1, .user2, .user3, .labelp1, .labelp2, .labelp3, .labelp4
+{
+    display: none;
+}
+.errbox
+{
+    width: 100%;
+    height: 50px;
+    background-color: #ffcc00;
+    opacity: 0.8;
+    border-radius: 5px;
+    border-bottom: 1px solid #ffcc00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.user4, .label4, .roll1, .roll2, .roll3, .roll4, .labelr1, .labelr2, .labelr3, .labelr4
+{
+    display: none;
+}
+.m-10{
+    margin: 10px;
+}
+.p-10
+{
+    padding: 10px;
+}
+.mx-10
+{
+    max-width: 12%;
+}
+.h-1
+{
+  font-size: 25px;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+.dnone
+{
+  display: none;
+}
+.mx-8
+{
+    max-width: 5%;
+}
+.formbold-form-label
+{
+    line-height: 0;
+}

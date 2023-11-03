@@ -1,0 +1,169 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div class="formbold-main-wrapper">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+</head>
+<body
+        <div class="formbold-form-wrapper">
+          <div class="header-content">
+                <img src="{% static 'images/logo.svg'%}" class="logo">
+                <div class="cont">
+                <p><b>Student Research Council</b></p>
+                <p><u>Technofete'23</u></p>
+                </div>
+          </div>
+          <form method="POST" class="form">
+            {%csrf_token%}
+            <div class="formbold-input-group">
+              <label for="name" class="formbold-form-label">Full Name (eg: John B)</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                class="formbold-form-input fullname"
+                required
+              />
+            </div>
+
+            <div class="formbold-input-group">
+              <label for="name" class="formbold-form-label"> Roll No (eg: 23BAD***)</label>
+              <input
+                type="text"
+                name="rollno"
+                id="name"
+                placeholder="Enter your Roll No"
+                class="formbold-form-input rollno"
+                required
+              />
+            </div>
+      
+            <div class="formbold-input-group">
+              <label class="formbold-form-label">
+                Which Department do you belong to?
+              </label>
+      
+              <select class="formbold-form-select" name="dept" id="occupation" required>
+                <option value="" disabled selected>Department</option>
+                            <option value="AIDS">Artifical Intelligence & Data Science</option>
+                            <option value="ECE">Electronics & Communications Engineering</option>
+                            <option value="CSE">Computer Science Engineering</option>
+                            <option value="MECH">Mechanical</option>
+                            <option value="CIVIL">Civil Engineering</option>
+                            <option value="AUTO">Automobile Engineering</option>
+                            <option value="MCT">Mechatronics</option>
+                            <option value="CYBER">Cyber Security</option>
+                            <option value="AIML">Aritificial Intelligence & Machine Learning</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group">
+                <label class="formbold-form-label">
+                  Year of Study
+                </label>
+        
+                <select class="formbold-form-select" name="year" id="occupation" required>
+                  <option value="" disabled selected>Year</option>
+                  <option value="II">Second Year</option>
+                  <option value="III">Third Year</option>
+                  <option value="IV">Fourth Year</option> 
+                </select>
+              </div>
+
+              <div class="formbold-input-group">
+                <label for="email" class="formbold-form-label"> Email </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  class="formbold-form-input formemail"
+                  required
+                />
+              </div>
+
+              <div class="formbold-input-group">
+                <label for="age" class="formbold-form-label"> Phone Number </label>
+                <input
+                  type="text"
+                  name="phn"
+                  id="age"
+                  placeholder="Phone Number"
+                  class="formbold-form-input phonenumber"
+                  required
+                />
+              </div>
+
+              <p class="eventheader">Events</p>
+              <div class="eventwrap">
+              {%for event in events%}
+              <div class="formbold-input-radio-wrapper">
+                <div class="formbold-radio-flex">
+                  <div class="formbold-radio-group">
+                    <label class="formbold-radio-label fs-1">
+                      <input
+                        class="formbold-input-radio"
+                        type="checkbox"
+                        name="events"
+                        id="ans"
+                        value="{{event}}"
+
+                      />
+                      <b>{{event}}</b>
+                      <p><span class="fw-1"><u>Description:</u></span> {{event.description}}</p>
+                      <span class="formbold-radio-checkmark"></span>
+                    </label>
+                    </div> 
+                  </div>
+              </div>
+              {%endfor%}
+              </div>
+      
+            <input type="submit" class="formbold-btn" placeholder="Submit">
+          </form>
+        </div>
+      </div>
+       
+<script>
+  
+
+form = document.querySelector('.form')
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();  
+  console.log("sdf")
+  var fullname = document.querySelector(".fullname").value
+  var rollno = document.querySelector(".rollno").value
+  var email = document.querySelector(".formemail").value
+  var phonenumber = document.querySelector(".phonenumber").value
+  var form = document.querySelector('.form')
+
+  var nvalidator = /^[\p{L}\s']+[\p{L}\s']+$/u
+  var evalidator = /^[a-zA-Z0-9._-]+@mcet\.in$/
+  var validator = /^\d{2}[a-zA-Z]{3}\d{3}$/
+  var pvalidator = /^[6-9]\d{9}$/
+
+  if (!validator.test(rollno))
+  {
+    console.log(rollno)
+    alert("Invalid College Roll No")
+  }
+  else if(!evalidator.test(email))
+  {
+    alert("Enter College mail id")
+  }
+  else if(!pvalidator.test(phonenumber))
+  {
+    alert("Enter Valid Phone Number")
+  }
+  else
+  {
+    form.submit()
+  }
+})
+
+</script>
+</body>
+</html>
