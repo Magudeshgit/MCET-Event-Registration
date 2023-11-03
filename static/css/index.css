@@ -257,7 +257,7 @@ body {
 }
 @media screen and (max-width: 800px)
 {
-    formbold-form-wrapper
+    .formbold-form-wrapper
     {
     max-width: 570px;
     }
