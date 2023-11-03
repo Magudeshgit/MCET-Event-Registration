@@ -350,6 +350,7 @@ h2,
   line-height: 42px;
   letter-spacing: 0px;
 }
+
 @media (min-width: 641px) {
   h2,
   .h2 {
@@ -576,6 +577,7 @@ label {
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 30px;
 }
 @media (min-width: 481px) {
   .container,
@@ -951,14 +953,10 @@ label {
 .pl-64 {
   padding-left: 64px;
 }
-.sr .has-animations .is-revealing {
-  visibility: hidden;
-}
-.has-animations .anime-element {
-  visibility: hidden;
-}
-.anime-ready .has-animations .anime-element {
-  visibility: visible;
+a
+{
+  text-decoration: none;
+  color: black;
 }
 .input,
 .textarea {
@@ -1109,8 +1107,8 @@ label {
   top: 0;
 }
 .header-shape-2 {
-  top: -40px;
-  right: -53px;
+  top: -20px;
+  right: -20px;
 }
 .site-header-inner {
   position: relative;
@@ -1161,7 +1159,8 @@ label {
   }
   .header-shape-2 {
     left: auto;
-    right: 38%;
+    right: -2%;
+
   }
 }
 .hero {

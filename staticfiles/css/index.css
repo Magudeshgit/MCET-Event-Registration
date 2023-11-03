@@ -28,6 +28,8 @@ body {
     width: 100%;
     background: white;
     padding: 20px;
+    min-height: 100vh;
+    height: 100vh;
 }
 
 .formbold-form-img {
@@ -111,7 +113,10 @@ body {
     background: #ffffff;
     transform: translate(-50%, -50%);
 }
-
+.formbold-form-label 
+{
+    margin-top: 25px;
+}
 .formbold-form-input {
     width: 100%;
     padding: 13px 22px;
