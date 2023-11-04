@@ -4,9 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<div class="formbold-main-wrapper">
+    <title>Product Pitching</title>
     <link rel="stylesheet" href="{%static 'css/index.css'%}">
 </head>
 <body>
+  {%if err%}
+  <div class="errbox">
+    <p>{{err}}</p>
+  </div>
+  {%endif%}
         <div class="formbold-form-wrapper m-10 p-10">
           <div class="header-content">
                 <img src="{% static 'images/logo.svg'%}" class="logo mx-12">
@@ -105,12 +111,12 @@ form.addEventListener('submit', (e)=>{
 
   if (!validator.test(rollno1))
   {
-    alert("Invalid College Roll No 1")
+    alert("Invalid College Roll No (eg: 23BAD***)")
   }
   else if (!validator.test(rollno2))
   {
     console.log(rollno2)
-    alert("Invalid College Roll No 2")
+    alert("Invalid College Roll No (eg: 23BAD***)")
   }
   
   else

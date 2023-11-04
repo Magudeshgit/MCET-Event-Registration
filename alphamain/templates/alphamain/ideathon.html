@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<div class="formbold-main-wrapper">
+    <title>Ideathon</title>
     <link rel="stylesheet" href="{%static 'css/index.css'%}">
 </head>
 <body>
@@ -96,25 +97,6 @@
                   required
                   
                 />
-                <label for="email" class="formbold-form-label"  style="margin-top: 20px;"> Member 4 </label>
-                <input
-                    type="text"
-                    name="mem4"
-                    id="email"
-                    placeholder="Team Member Name"
-                    class="formbold-form-input"
-                    required
-                />
-                <label for="email" class="formbold-form-label">Roll No</label>
-                <input
-                  type="text"
-                  name="roll4"
-                  id="email"
-                  placeholder="Roll No"
-                  class="formbold-form-input rolln4"
-                  required
-                  
-                />
                 <label for="email" class="formbold-form-label">Phone No (common to a team)</label>
                 <input
                   type="number"
@@ -137,8 +119,7 @@ form.addEventListener('submit', (e)=>{
   e.preventDefault();  
   var rollno1 = document.querySelector(".rolln1").value
   var rollno2 = document.querySelector(".rolln2").value
-  var rollno3 = document.querySelector(".rolln2").value
-  var rollno4 = document.querySelector(".rolln2").value
+  var rollno3 = document.querySelector(".rolln3").value
 
   var form = document.querySelector('.form')
 

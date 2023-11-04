@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technofete Registration Count</title>
+</head>
+<body>
+    <div>
+        {% for i in events%}
+            <p>Total Registration in {{i}} : {{i.count}}</p>
+        {%endfor%}
+    </div>
+</body>
+</html>

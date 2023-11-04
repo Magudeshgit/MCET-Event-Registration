@@ -26,5 +26,6 @@ urlpatterns = [
     path('paper/', views.paper),
     path('ideathon/', views.ideathon),
     path('product/', views.product),
-    path('success/', views.success)
+    path('success/', views.success),
+    path('count/', views.totalcount)
 ]

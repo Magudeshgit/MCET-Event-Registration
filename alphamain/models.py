@@ -7,11 +7,11 @@ class Events(models.Model):
     def __str__(self):
         return self.events
     
-class slots(models.Model):
-    slotname=models.CharField(max_length=50)
-    description= models.CharField(max_length=50)
+class TotalRegistration(models.Model):
+    eventname=models.CharField(max_length=50)
+    count= models.IntegerField(default=0)
     def __str__(self):
-        return self.slotname
+        return self.eventname 
     
 class studentlist(models.Model):
     name=models.CharField(max_length=50)
@@ -34,7 +34,9 @@ class ProjectPresentation(models.Model):
     member2=models.CharField(max_length=50)
     roll2=models.CharField(max_length=20, blank=True)
     stream=models.CharField(max_length=20, blank=True)
+    contact=models.CharField(max_length=20)
     abstract=models.TextField()
+    contact=models.CharField(max_length=40, blank=True)
     #timeslot = models.OneToOneField(slots, on_delete=models.CASCADE, primary_key=False)
 
     def __str__(self):
@@ -48,6 +50,7 @@ class PaperPresentation(models.Model):
     member2=models.CharField(max_length=50)
     roll2=models.CharField(max_length=20, blank=True)
     abstract=models.TextField()
+    contact = models.CharField(max_length=20, blank=True)
     #timeslot = models.ForeignKey(slots, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -73,7 +76,7 @@ class Product(models.Model):
     member2=models.CharField(max_length=50)
     roll2=models.CharField(max_length=20, blank=True)
     about=models.TextField()
-    contact=models.CharField(max_length=20)
+    contact=models.CharField(max_length=20, blank=True)
     def __str__(self):
         return self.topic
 

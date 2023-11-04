@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<div class="formbold-main-wrapper">
+    <title>Project Presentation</title>
     <link rel="stylesheet" href="{%static 'css/index.css'%}">
 </head>
 <body>
@@ -89,7 +90,16 @@
                   required
                   
                 />
-      
+                <label for="email" class="formbold-form-label">Contact No (common on for a team)</label>
+                <input
+                  type="tnumberxt"
+                  name="number"
+                  id="email"
+                  placeholder="Phone Number"
+                  class="formbold-form-input rolln2"
+                  required
+                  
+                />
             <div class="formbold-input-group">
               <label class="formbold-form-label">
                 Tell us about your Project
@@ -121,12 +131,12 @@ form.addEventListener('submit', (e)=>{
   if (!validator.test(rollno1))
   {
     console.log(rollno1)
-    alert("Invalid College Roll No 1")
+    alert("Invalid College Roll No")
   }
   else if (!validator.test(rollno2))
   {
     console.log(rollno2)
-    alert("Invalid College Roll No 1")
+    alert("Invalid College Roll No")
   }
   
   else
