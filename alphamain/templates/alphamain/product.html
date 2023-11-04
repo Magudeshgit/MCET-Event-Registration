@@ -47,7 +47,7 @@
                   
                 />
 
-                <label for="email" class="formbold-form-label">*Roll No</label>
+                <label for="email" class="formbold-form-label">Roll No (eg: 23BXXYYY)</label>
                 <input
                   type="text"
                   name="roll1"
@@ -66,7 +66,7 @@
                     placeholder="Team Member Name"
                     class="formbold-form-input"
                 />
-                <label for="email" class="formbold-form-label">Roll No</label>
+                <label for="email" class="formbold-form-label">Roll No (eg: 23BXXYYY)</label>
                 <input
                   type="text"
                   name="roll2"
@@ -111,12 +111,12 @@ form.addEventListener('submit', (e)=>{
 
   if (!validator.test(rollno1))
   {
-    alert("Invalid College Roll No (eg: 23BAD***)")
+    alert("Do Not Enter 7276 in the roll, Enter in the format 23BADXXX")
   }
   else if (!validator.test(rollno2))
   {
     console.log(rollno2)
-    alert("Invalid College Roll No (eg: 23BAD***)")
+    alert("Do Not Enter 7276 in the roll, Enter in the format 23BADXXX")
   }
   
   else
