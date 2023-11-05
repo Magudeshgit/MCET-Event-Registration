@@ -146,3 +146,6 @@ def totalcount(request):
      return render(request, "alphamain/count.html", context={"events": object})
 def success(request):
     return render(request, "alphamain/success.html")
+
+def Closed(request):
+     return render(request, "alphamain/close.html")

@@ -21,11 +21,11 @@ from alphamain import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', views.home),
-    path('project/', views.project),
-    path('paper/', views.paper),
-    path('ideathon/', views.ideathon),
-    path('product/', views.product),
-    path('success/', views.success),
-    path('count/', views.totalcount)
+    path('', views.Closed),
+    #path('project/', views.project),
+    #path('paper/', views.paper),
+    #path('ideathon/', views.ideathon),
+    #path('product/', views.product),
+    #path('success/', views.success),
+    #path('count/', views.totalcount)
 ]
