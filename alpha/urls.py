@@ -27,5 +27,5 @@ urlpatterns = [
     #path('ideathon/', views.ideathon),
     #path('product/', views.product),
     #path('success/', views.success),
-    #path('count/', views.totalcount)
+    path('count/', views.totalcount)
 ]
